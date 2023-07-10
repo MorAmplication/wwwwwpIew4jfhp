@@ -1,61 +1,61 @@
 [
   {
     "role": "user",
-    "resource": "User",
+    "resource": "Mor",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "User",
+    "resource": "Mor",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "User",
+    "resource": "Mor",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "User",
+    "resource": "Mor",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "User",
+    "resource": "Mor",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Mor",
+    "resource": "Amit",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Mor",
+    "resource": "Amit",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Mor",
+    "resource": "Amit",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Mor",
+    "resource": "Amit",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "Mor",
+    "resource": "Amit",
     "action": "read:any",
     "attributes": "*"
   }

@@ -12,10 +12,10 @@ import { JwtStrategy } from "./jwt/jwt.strategy";
 import { jwtSecretFactory } from "./jwt/jwtSecretFactory";
 import { PasswordService } from "./password.service";
 import { TokenService } from "./token.service";
-import { MorModule } from "../mor/mor.module";
+import { AmitModule } from "../amit/amit.module";
 @Module({
   imports: [
-    forwardRef(() => MorModule),
+    forwardRef(() => AmitModule),
     PassportModule,
     SecretsManagerModule,
     JwtModule.registerAsync({

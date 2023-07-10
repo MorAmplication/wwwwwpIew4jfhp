@@ -1,11 +1,11 @@
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { GqlContextType, GqlExecutionContext } from "@nestjs/graphql";
-import { Mor } from "@prisma/client";
+import { Amit } from "@prisma/client";
 
 /**
  * Access the user data from the request object i.e `req.user`.
  */
-function userFactory(ctx: ExecutionContext): Mor {
+function userFactory(ctx: ExecutionContext): Amit {
   const contextType = ctx.getType();
   if (contextType === "http") {
     // do something that is only important in the context of regular HTTP requests (REST)
@@ -25,6 +25,6 @@ function userFactory(ctx: ExecutionContext): Mor {
   throw new Error("Invalid context");
 }
 
-export const UserData = createParamDecorator<undefined, ExecutionContext, Mor>(
+export const UserData = createParamDecorator<undefined, ExecutionContext, Amit>(
   (data, ctx: ExecutionContext) => userFactory(ctx)
 );

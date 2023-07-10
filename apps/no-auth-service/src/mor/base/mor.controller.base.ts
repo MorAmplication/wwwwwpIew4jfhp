@@ -53,8 +53,6 @@ export class MorControllerBase {
         id: true,
         createdAt: true,
         updatedAt: true,
-        username: true,
-        roles: true,
       },
     });
   }
@@ -79,8 +77,6 @@ export class MorControllerBase {
         id: true,
         createdAt: true,
         updatedAt: true,
-        username: true,
-        roles: true,
       },
     });
   }
@@ -106,8 +102,6 @@ export class MorControllerBase {
         id: true,
         createdAt: true,
         updatedAt: true,
-        username: true,
-        roles: true,
       },
     });
     if (result === null) {
@@ -142,8 +136,6 @@ export class MorControllerBase {
           id: true,
           createdAt: true,
           updatedAt: true,
-          username: true,
-          roles: true,
         },
       });
     } catch (error) {
@@ -177,8 +169,6 @@ export class MorControllerBase {
           id: true,
           createdAt: true,
           updatedAt: true,
-          username: true,
-          roles: true,
         },
       });
     } catch (error) {

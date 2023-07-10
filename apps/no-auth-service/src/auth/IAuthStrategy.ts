@@ -1,5 +1,5 @@
-import { MorInfo } from "./MorInfo";
+import { AmitInfo } from "./AmitInfo";
 
 export interface IAuthStrategy {
-  validate: (...any: any) => Promise<MorInfo>;
+  validate: (...any: any) => Promise<AmitInfo>;
 }
