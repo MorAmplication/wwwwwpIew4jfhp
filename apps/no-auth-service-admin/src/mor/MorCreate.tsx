@@ -1,28 +1,11 @@
 import * as React from "react";
-
-import {
-  Create,
-  SimpleForm,
-  CreateProps,
-  TextInput,
-  PasswordInput,
-  SelectArrayInput,
-} from "react-admin";
-
-import { ROLES_OPTIONS } from "../user/RolesOptions";
+import { Create, SimpleForm, CreateProps } from "react-admin";
 
 export const MorCreate = (props: CreateProps): React.ReactElement => {
   return (
     <Create {...props}>
       <SimpleForm>
-        <TextInput label="Username" source="username" />
-        <PasswordInput label="Password" source="password" />
-        <SelectArrayInput
-          source="roles"
-          choices={ROLES_OPTIONS}
-          optionText="label"
-          optionValue="value"
-        />
+        <div />
       </SimpleForm>
     </Create>
   );

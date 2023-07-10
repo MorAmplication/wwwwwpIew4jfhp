@@ -4,7 +4,7 @@ import { Credentials } from "./Credentials";
 import { PasswordService } from "./password.service";
 import { TokenService } from "./token.service";
 import { VALID_ID } from "../tests/auth/constants";
-import { MorService } from "../mor/mor.service";
+import { AmitService } from "../amit/amit.service";
 
 const VALID_CREDENTIALS: Credentials = {
   username: "Valid User",
@@ -54,7 +54,7 @@ describe("AuthService", () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
-          provide: MorService,
+          provide: AmitService,
           useValue: authEntityService,
         },
         {

@@ -18,9 +18,6 @@ import * as gqlACGuard from "../../auth/gqlAC.guard";
 import { GqlDefaultAuthGuard } from "../../auth/gqlDefaultAuth.guard";
 import * as common from "@nestjs/common";
 import { AclFilterResponseInterceptor } from "../../interceptors/aclFilterResponse.interceptor";
-import { AclValidateRequestInterceptor } from "../../interceptors/aclValidateRequest.interceptor";
-import { CreateMorArgs } from "./CreateMorArgs";
-import { UpdateMorArgs } from "./UpdateMorArgs";
 import { DeleteMorArgs } from "./DeleteMorArgs";
 import { MorCountArgs } from "./MorCountArgs";
 import { MorFindManyArgs } from "./MorFindManyArgs";
@@ -74,43 +71,6 @@ export class MorResolverBase {
       return null;
     }
     return result;
-  }
-
-  @common.UseInterceptors(AclValidateRequestInterceptor)
-  @graphql.Mutation(() => Mor)
-  @nestAccessControl.UseRoles({
-    resource: "Mor",
-    action: "create",
-    possession: "any",
-  })
-  async createMor(@graphql.Args() args: CreateMorArgs): Promise<Mor> {
-    return await this.service.create({
-      ...args,
-      data: args.data,
-    });
-  }
-
-  @common.UseInterceptors(AclValidateRequestInterceptor)
-  @graphql.Mutation(() => Mor)
-  @nestAccessControl.UseRoles({
-    resource: "Mor",
-    action: "update",
-    possession: "any",
-  })
-  async updateMor(@graphql.Args() args: UpdateMorArgs): Promise<Mor | null> {
-    try {
-      return await this.service.update({
-        ...args,
-        data: args.data,
-      });
-    } catch (error) {
-      if (isRecordNotFoundError(error)) {
-        throw new apollo.ApolloError(
-          `No resource was found for ${JSON.stringify(args.where)}`
-        );
-      }
-      throw error;
-    }
   }
 
   @graphql.Mutation(() => Mor)

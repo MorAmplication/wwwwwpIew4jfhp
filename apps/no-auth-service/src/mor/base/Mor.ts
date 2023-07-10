@@ -13,9 +13,6 @@ import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsDate } from "class-validator";
 import { Type } from "class-transformer";
-import { IsJSONValue } from "@app/custom-validators";
-import { GraphQLJSON } from "graphql-type-json";
-import { JsonValue } from "type-fest";
 
 @ObjectType()
 class Mor {
@@ -42,21 +39,6 @@ class Mor {
   @Type(() => Date)
   @Field(() => Date)
   updatedAt!: Date;
-
-  @ApiProperty({
-    required: true,
-    type: String,
-  })
-  @IsString()
-  @Field(() => String)
-  username!: string;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsJSONValue()
-  @Field(() => GraphQLJSON)
-  roles!: JsonValue;
 }
 
 export { Mor as Mor };
